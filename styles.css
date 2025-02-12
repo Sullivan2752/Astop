@@ -1,0 +1,362 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #ff6600;
+    font-size: 2.5rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.hero {
+    background: url('assets/images/hero-bg.jpg') no-repeat center center/cover;
+    padding: 5rem 1rem;
+    text-align: center;
+    color: #ff6600;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+.about, .products, .shop, .product-detail {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.about h2, .products h2, .shop h2, .product-detail h2 {
+    font-size: 2rem;
+    color: #ff6600;
+    margin-bottom: 1rem;
+}
+
+.about p, .products p, .shop p, .product-detail p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+.product-types {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.product-types a {
+    color: #ff6600;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.product-types a:hover {
+    color: #e65c00;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.product-grid h3 {
+    width: 100%;
+    text-align: center;
+    color: #ff6600;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.product-card {
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ff6600;
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    color: #ff6600;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-card p {
+    color: #ccc;
+    font-size: 1rem;
+}
+
+.product-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer {
+    background-color: #333;
+    padding: 1rem;
+    text-align: center;
+    color: #f0f0f0;
+    margin-top: 2rem;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .product-types {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-types {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card {
+        width: 90%;
+    }
+}
+
+
+.contact {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #f0f0f0;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ff6600;
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-info a {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #e65c00;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: #f0f0f0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #888;
+}
+
+.contact-form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* ...existing code... */
+
+.carousel-container {
+    max-width: 600px; /* Ajustez cette valeur selon vos besoins */
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.carousel img {
+    min-width: 100%;
+    border-radius: 8px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+/* ...existing code... */
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px; /* Ajustez cette valeur selon vos besoins */
+    height: auto;
+    margin-right: 10px;
+}
+
+/* ...existing code... */
+
+.paypal-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px; /* Ajout d'un espace entre les sections */
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-card h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 0.9em;
+    color: #555;
+    padding: 0 10px 10px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ...existing code... */
+
+
+
+
+
+
+
+
