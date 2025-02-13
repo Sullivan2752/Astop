@@ -175,3 +175,75 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    let trailActive = false;
+    
+    // Création du bouton pour activer/désactiver l'effet
+    const toggleButton = document.createElement('button');
+    toggleButton.innerText = 'Activer Traînée';
+    toggleButton.classList.add('toggle-trail');
+    document.body.appendChild(toggleButton);
+    
+    toggleButton.addEventListener('click', function() {
+        trailActive = !trailActive;
+        toggleButton.innerText = trailActive ? 'Désactiver Traînée' : 'Activer Traînée';
+    });
+    
+
+    document.addEventListener('mousemove', function(event) {
+        if (!trailActive) return;
+    
+        const x = event.clientX;
+        const y = event.clientY;
+    
+        const trail = document.createElement('div');
+        trail.classList.add('mouse-trail');
+        document.body.appendChild(trail);
+    
+        trail.style.left = `${x}px`;
+        trail.style.top = `${y}px`;
+    
+        // Créer une couleur lumineuse
+        const hue = Math.random() * 360;
+        const lightColor = `hsl(${hue}, 100%, 70%)`;
+    
+        // Appliquer le dégradé avec un effet de lueur
+        trail.style.background = `radial-gradient(circle, ${lightColor} 20%, rgba(255, 255, 255, 0) 70%)`;
+        trail.style.boxShadow = `0 0 30px ${lightColor}, 0 0 60px ${lightColor}`;
+    
+        // Animation d'expansion
+        setTimeout(() => {
+            trail.classList.add('active');
+        }, 50);
+    
+        // Suppression après 1.5s
+        setTimeout(() => {
+            trail.remove();
+        }, 1500);
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+        let trailActive = false;
+        
+        const toggleButton = document.createElement('button');
+        toggleButton.innerText = 'Activer Traînée';
+        toggleButton.classList.add('toggle-trail');
+        document.body.appendChild(toggleButton);
+        
+        const audioPlayer = document.querySelector('.audio-player audio');
+        
+        toggleButton.addEventListener('click', function() {
+            trailActive = !trailActive;
+            toggleButton.innerText = trailActive ? 'Désactiver Traînée' : 'Activer Traînée';
+            
+            if (trailActive) {
+                audioPlayer.play();  // Démarre la musique quand la traînée est activée
+            } else {
+                audioPlayer.pause();  // Arrête la musique quand la traînée est désactivée
+            }
+        });
+    });
+    
+    
+    
+
+}); 

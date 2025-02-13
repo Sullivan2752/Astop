@@ -35,6 +35,8 @@ nav ul li a {
     font-size: 1.2rem;
 }
 
+/* ...existing code... */
+
 .hero {
     background: url('assets/images/hero-bg.jpg') no-repeat center center/cover;
     padding: 5rem 1rem;
@@ -47,6 +49,28 @@ nav ul li a {
     margin-bottom: 1rem;
 }
 
+.hero img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media query pour les petits écrans */
+@media (max-width: 600px) {
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* ...existing code... */
 .hero p {
     font-size: 1.2rem;
 }
@@ -411,6 +435,118 @@ footer {
 }
 
 /* ...existing code... */
+
+
+
+.mouse-trail {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    filter: blur(20px);
+    z-index: -1;
+    opacity: 1;
+    transition: transform 0.6s ease-out, opacity 1s ease-out, background 1s ease-out;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.mouse-trail.active {
+    transform: scale(4) !important;
+    opacity: 0;
+}
+
+.toggle-trail {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(45deg, #ff6600, #ff3300);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.toggle-trail:hover {
+    background: linear-gradient(45deg, #e65c00, #cc3300);
+    transform: scale(1.1);
+}
+
+/* Conteneur pour la musique */
+/* Conteneur pour la musique */
+/* Conteneur pour la musique */
+.music-container {
+    position: fixed;
+    top: 70px; /* Positionner légèrement plus bas pour éviter de chevaucher d'autres éléments */
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+    width: auto;
+    max-width: 100%;
+}
+
+/* Lecteur audio */
+.audio-player {
+    background-color: #333;
+    padding: 5px 10px; /* Espacement pour l'esthétique */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0; /* Empêche la réduction du lecteur audio */
+    width: 300px;  /* Largeur par défaut sur grands écrans */
+    max-width: 100%; /* Ne dépasse pas la largeur de l'écran */
+}
+
+.audio-player audio {
+    width: 100%;  /* Prend toute la largeur du conteneur */
+    height: 40px;  /* Hauteur standard pour les grands écrans */
+    border-radius: 5px;
+}
+
+/* Media Queries pour les petits écrans */
+@media (max-width: 768px) {
+    .music-container {
+        top: 120px; /* Plus bas pour les tablettes */
+        right: 10px;  /* Réduit l'espace sur le côté */
+    }
+
+    .audio-player {
+        width: 200px; /* Réduit la taille sur les écrans moyens */
+    }
+
+    .audio-player audio {
+        height: 35px; /* Ajuste la hauteur */
+    }
+}
+
+@media (max-width: 480px) {
+    .music-container {
+        top: 150px;  /* Positionne encore plus bas sur les petits écrans */
+        right: 5px; /* Réduit l'espace à droite */
+    }
+
+    .audio-player {
+        width: 150px; /* Réduit la taille sur les très petits écrans */
+    }
+
+    .audio-player audio {
+        height: 30px;  /* Ajuste la hauteur pour les très petits écrans */
+    }
+}
+
+
+
+
+
+
+
 
 
 
